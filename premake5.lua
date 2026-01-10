@@ -1,3 +1,5 @@
+-- docking branch
+
 imgui_prj_output_dir = ("bin/imgui/builds")
 imgui_prj_intermediates_dir = ("bin/imgui/intermediates")
 
