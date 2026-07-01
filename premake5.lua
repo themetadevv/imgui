@@ -1,17 +1,12 @@
--- docking branch
-
-imgui_prj_output_dir = ("bin/imgui/builds")
-imgui_prj_intermediates_dir = ("bin/imgui/intermediates")
-
 project "imgui"
 	kind "StaticLib"
 	language "C++"
-    cppdialect "C++20"
+    cppdialect "C++23"
 	systemversion "latest"
 	staticruntime "Off" 
 
-	targetdir (imgui_prj_output_dir .. "/%{cfg.system}_%{cfg.buildcfg}")
-    objdir (imgui_prj_intermediates_dir .. "/%{cfg.system}")
+	targetdir ("bin/build/%{cfg.system}_%{cfg.buildcfg}")
+    objdir ("bin/intermediates/%{cfg.system}")
 
 	-- add required files
 	files
@@ -27,8 +22,11 @@ project "imgui"
 		"imstb_textedit.h",
 		"imstb_truetype.h",
 		"imgui_demo.cpp",
-		"ImGuizmo.h",
-		"ImGuizmo.cpp"
+        "ImGuizmo.h",
+        "ImGuizmo.cpp",
+    
+        "backends/imgui_impl_opengl3.cpp",
+        "backends/imgui_impl_glfw.cpp"
 	}
 
 	filter "configurations:Debug"
