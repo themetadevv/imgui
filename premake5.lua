@@ -31,6 +31,10 @@ project "imgui"
         "backends/imgui_impl_glfw.cpp",
 	}
 
+    includedirs {
+        "%{prj.location}/"
+    }
+
 	filter "configurations:Debug"
 		runtime "Debug"
 		symbols "on"
